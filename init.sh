@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ $SAVEFILE ]
+if [ -e $SAVEFILE ]
 then
-echo "LOAD SAVE FILE"
+  echo "LOAD SAVE FILE"
 else
   echo "NO SAVE FILE CREATING SAVE FILE"
   /opt/factorio/bin/x64/factorio --create $SAVEFILE --map-gen-settings $MAPSETTINGS
