@@ -26,7 +26,7 @@ ADD  server-settings.json /opt/factorio/
 ADD  init.sh /opt/factorio/
 
 RUN mkdir /opt/factorio/saves
-ADD saves/factorio_save.zip /opt/factorio/saves
+ADD factorio_save.zip /opt/factorio/saves
 ENV SAVEFILE /opt/factorio/saves/factorio_save.zip
 
 EXPOSE 34197/udp
