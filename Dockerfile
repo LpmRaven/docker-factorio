@@ -11,9 +11,7 @@ RUN useradd -m -d /opt/factorio -s /bin/bash factorio \
   && chown -R factorio.factorio /opt/factorio
 USER factorio
 
-ADD saves/factorio_save.zip /opt/factorio/saves
 ENV HOME /opt/factorio
-ENV SAVEFILE /opt/factorio/saves/factorio_save.zip
 ENV MAPSETTINGS /opt/factorio/map-gen-settings.json
 ENV SERVERSETTINGS /opt/factorio/server-settings.json
 
@@ -26,6 +24,10 @@ RUN  wget -q -O - https://www.factorio.com/download-headless/stable | grep -o -m
 ADD  map-gen-settings.json /opt/factorio/
 ADD  server-settings.json /opt/factorio/
 ADD  init.sh /opt/factorio/
+
+RUN mkdir /opt/factorio/saves
+ADD saves/factorio_save.zip /opt/factorio/saves
+ENV SAVEFILE /opt/factorio/saves/factorio_save.zip
 
 EXPOSE 34197/udp
 CMD ["./init.sh"]
