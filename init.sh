@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $SAVEFILE ]; 
+if [ $SAVEFILE ]
 then
 echo "LOAD SAVE FILE"
 else
