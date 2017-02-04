@@ -11,6 +11,7 @@ RUN useradd -m -d /opt/factorio -s /bin/bash factorio \
   && chown -R factorio.factorio /opt/factorio
 USER factorio
 
+ADD saves/factorio_save.zip /opt/factorio/saves
 ENV HOME /opt/factorio
 ENV SAVEFILE /opt/factorio/saves/factorio_save.zip
 ENV MAPSETTINGS /opt/factorio/map-gen-settings.json
